@@ -64,7 +64,6 @@ class SudokuGame
   end
 
   def solved?
-    debugger
     board.solved?
   end
 
