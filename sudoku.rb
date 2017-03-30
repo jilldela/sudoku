@@ -1,3 +1,4 @@
+require "byebug"
 require_relative "board"
 
 class SudokuGame
@@ -48,8 +49,8 @@ class SudokuGame
 
   def play_turn
     board.render
-    val = get_pos
-    pos = get_val
+    val = get_val
+    pos = get_pos
     board[pos] = val
   end
 
