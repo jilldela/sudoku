@@ -1,9 +1,10 @@
 require_relative "board"
 require 'colorize'
+require 'byebug'
 
 class SudokuGame
   def self.from_file(filename)
-    board = File.readlines(filename).map(&:chomp)
+    board = Board.from_file(filename)
     self.new(board)
   end
 
@@ -63,6 +64,7 @@ class SudokuGame
   end
 
   def solved?
+    debugger
     board.solved?
   end
 
