@@ -3,7 +3,7 @@ require 'colorize'
 
 class SudokuGame
   def self.from_file(filename)
-    board = self.from_file(filename)
+    board = File.readlines(filename).map(&:chomp)
     self.new(board)
   end
 
@@ -73,6 +73,7 @@ class SudokuGame
       return true
     else
       get_pos
+    end
   end
 
   def valid_val?(val)
