@@ -67,10 +67,18 @@ class SudokuGame
     board.solved?
   end
 
+  def parse_val(str)
+    Integer(str)
+  end
+
+  def parse_pos(str)
+    str.split(',').map(&:to_i)
+  end
+
   def valid_pos?(pos)
-    if pos.is_a?(:Array) &&
+    if pos.is_a?(Array) &&
       pos.length = 2 &&
-      pos.all? { |x| x.in?(0, board.size - 1) }
+      pos.all? { |x| x.between?(0, board.size - 1) }
       return true
     else
       get_pos
